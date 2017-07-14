@@ -3627,7 +3627,7 @@ function getIceFnObj(config) {
                 .try(function () {
                 id
                     .properties
-                    .setProperty('Ice.Default.Locator', protName + '/Locator:tcp -h ' + ipTest + ' -p ' + port);
+                    .setProperty('Ice.Default.Locator', protName + '/Locator:tcp -h ' + ipServer + ' -p ' + port);
                 ic = Ice.initialize(id);
                 let base;
                 if (debug) {
