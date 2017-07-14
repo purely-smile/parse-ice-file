@@ -1,0 +1,35 @@
+{
+  "name": "parse-ice-file",
+  "version": "1.0.0",
+  "description": "解析ice文件为对应的ts格式文件",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "precopy-ice": "rm -rf ./data/*",
+    "copy-ice": "cp -r ~/proj/Beagle/slice/* ./data/",
+    "prebuildice": "rm -rf ./ice-js/*",
+    "buildice": "npm run copy-ice && gulp build-ice",
+    "postbuildice": "rm -rf ./ice-js/.depend",
+    "prebuild": "rm -rf public/*",
+    "build": "npm run buildice && ts-node parser-files.ts && webpack"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ice": "^3.6.2",
+    "ice-long": "git+https://github.com/purely-smile/ice-long.git",
+    "merge": "^1.2.0",
+    "rxjs": "^5.4.1"
+  },
+  "devDependencies": {
+    "@types/assert": "0.0.31",
+    "@types/mocha": "^2.2.41",
+    "@types/node": "^8.0.1",
+    "assert": "^1.4.1",
+    "gulp": "^3.9.1",
+    "gulp-ice-builder": "^1.0.6",
+    "gulp-rename": "^1.2.2",
+    "gulp-replace": "^0.6.1",
+    "ts-loader": "^2.2.2"
+  }
+}
