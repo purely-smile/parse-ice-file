@@ -1,6 +1,6 @@
 node_modules
-data
-dist
-ice-js
-lib
-proxy
+/data
+/dist
+/ice-js
+/lib
+/proxy
